@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "container": "iCloud.com.donaldlin.karteria",
+  "database": "public",
+  "purpose": "Anonymous Karteria review exchange. The iOS client has no direct public database permissions; the Cloudflare Worker is the only reader and writer.",
+  "rolePolicy": {
+    "world": [],
+    "authenticated": [],
+    "creator": [],
+    "moderator": ["create", "read", "write", "delete"],
+    "serverToServerKey": "Required for every public database operation. Store its P-256 private key only as a Cloudflare Worker Secret."
+  },
+  "recordTypes": {
+    "ReviewSubmission": {
+      "recordName": "submission-{uuid}",
+      "fields": {
+        "submissionID": { "type": "String", "queryable": true },
+        "ownerSubjectHash": { "type": "String" },
+        "state": { "type": "String", "queryable": true },
+        "submittedAt": { "type": "Int64", "queryable": true, "sortable": true },
+        "settledAt": { "type": "Int64" },
+        "cleanupAt": { "type": "Int64" },
+        "contractTitle": { "type": "String" },
+        "baselineSummary": { "type": "String" },
+        "criteriaJSON": { "type": "String" },
+        "explanation": { "type": "String" },
+        "baselineManifestJSON": { "type": "String" },
+        "checkpointManifestJSON": { "type": "String" },
+        "failedCriteriaIndexesJSON": { "type": "String" },
+        "reportCount": { "type": "Int64" },
+        "baselineAsset1": { "type": "Asset" },
+        "baselineAsset2": { "type": "Asset" },
+        "baselineAsset3": { "type": "Asset" },
+        "checkpointAsset1": { "type": "Asset" },
+        "checkpointAsset2": { "type": "Asset" },
+        "checkpointAsset3": { "type": "Asset" }
+      }
+    },
+    "ReviewSeat": {
+      "recordName": "seat-{submission-uuid}-{1|2|3}",
+      "fields": {
+        "seatID": { "type": "String", "queryable": true },
+        "submissionID": { "type": "String", "queryable": true },
+        "ownerSubjectHash": { "type": "String" },
+        "reviewerSubjectHash": { "type": "String", "queryable": true },
+        "state": { "type": "String", "queryable": true },
+        "ordinal": { "type": "Int64" },
+        "submittedAt": { "type": "Int64" },
+        "claimedAt": { "type": "Int64" },
+        "claimUntil": { "type": "Int64", "queryable": true, "sortable": true },
+        "completedAt": { "type": "Int64" }
+      }
+    },
+    "PeerReview": {
+      "recordName": "review-{seat-uuid}",
+      "fields": {
+        "reviewID": { "type": "String" },
+        "submissionID": { "type": "String", "queryable": true },
+        "seatID": { "type": "String" },
+        "reviewerSubjectHash": { "type": "String", "queryable": true },
+        "decisionsJSON": { "type": "String" },
+        "note": { "type": "String" },
+        "passes": { "type": "Boolean" },
+        "submittedAt": { "type": "Int64" },
+        "qualityEligible": { "type": "Boolean", "queryable": true },
+        "settledAt": { "type": "Int64", "queryable": true, "sortable": true },
+        "settlementID": { "type": "String" }
+      }
+    },
+    "ReviewSettlement": {
+      "recordName": "settlement-{submission-uuid}",
+      "fields": {
+        "settlementID": { "type": "String" },
+        "submissionID": { "type": "String", "queryable": true },
+        "ownerSubjectHash": { "type": "String" },
+        "outcome": { "type": "String" },
+        "failedCriteriaIndexesJSON": { "type": "String" },
+        "reviewedAt": { "type": "Int64" },
+        "cleanupAt": { "type": "Int64", "queryable": true, "sortable": true },
+        "cleanupState": { "type": "String", "queryable": true },
+        "evidencePurgedAt": { "type": "Int64" }
+      }
+    },
+    "ReviewerStanding": {
+      "recordName": "standing-{sha256-siwa-subject}",
+      "fields": {
+        "subjectHash": { "type": "String" },
+        "reviewCredits": { "type": "Int64" },
+        "calibrationCompleted": { "type": "Int64" },
+        "calibrationCorrect": { "type": "Int64" },
+        "calibrationStatus": { "type": "String" },
+        "communityPassAwardsJSON": { "type": "String" },
+        "blockedOwnerSubjectHashesJSON": { "type": "String" }
+      }
+    },
+    "ContentReport": {
+      "recordName": "report-{submission-uuid}-{reporter-subject-hash}",
+      "fields": {
+        "submissionID": { "type": "String", "queryable": true },
+        "reporterSubjectHash": { "type": "String" },
+        "reason": { "type": "String" },
+        "detail": { "type": "String" },
+        "state": { "type": "String", "queryable": true },
+        "createdAt": { "type": "Int64", "queryable": true, "sortable": true }
+      }
+    }
+  }
+}

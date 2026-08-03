@@ -1,0 +1,11 @@
+.DS_Store
+DerivedData/
+build/
+.build/
+xcuserdata/
+*.xcuserstate
+Workers/.dev.vars
+Workers/node_modules/
+Workers/.wrangler/
+Workers/.bundle/
+Karteria/Config/Secrets.xcconfig

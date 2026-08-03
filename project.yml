@@ -1,0 +1,127 @@
+name: Karteria
+options:
+  developmentLanguage: en
+  knownRegions:
+    - en
+  bundleIdPrefix: com.donaldlin
+  deploymentTarget:
+    iOS: "18.0"
+  createIntermediateGroups: true
+
+settings:
+  base:
+    DEVELOPMENT_TEAM: 9A686AFY6S
+    SWIFT_VERSION: "5.0"
+    CODE_SIGN_STYLE: Automatic
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    LOCALIZATION_PREFERS_STRING_CATALOGS: YES
+    SWIFT_EMIT_LOC_STRINGS: YES
+    STRING_CATALOG_GENERATE_SYMBOLS: NO
+
+packages:
+  RevenueCat:
+    url: https://github.com/RevenueCat/purchases-ios-spm.git
+    from: "5.0.0"
+  ZIPFoundation:
+    url: https://github.com/weichsel/ZIPFoundation.git
+    from: "0.9.0"
+
+targets:
+  Karteria:
+    type: application
+    platform: iOS
+    deploymentTarget: "18.0"
+    sources:
+      - path: Karteria
+    dependencies:
+      - package: RevenueCat
+        product: RevenueCat
+      - package: ZIPFoundation
+        product: ZIPFoundation
+      - sdk: AuthenticationServices.framework
+      - sdk: CloudKit.framework
+      - sdk: PhotosUI.framework
+      - sdk: SensitiveContentAnalysis.framework
+      - sdk: AVFoundation.framework
+      - sdk: Vision.framework
+      - sdk: Speech.framework
+      - sdk: UserNotifications.framework
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.donaldlin.karteria
+        PRODUCT_NAME: Karteria
+        TARGETED_DEVICE_FAMILY: "1"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        CODE_SIGN_ENTITLEMENTS: Karteria/Karteria.entitlements
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+    preBuildScripts:
+      - name: Verify Release Configuration
+        script: scripts/verify_release_config.sh
+        basedOnDependencyAnalysis: false
+    info:
+      path: Karteria/Info.plist
+      properties:
+        CFBundleDisplayName: Karteria
+        CFBundleShortVersionString: "$(MARKETING_VERSION)"
+        CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
+        ITSAppUsesNonExemptEncryption: false
+        UIUserInterfaceStyle: Light
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+        UIBackgroundModes:
+          - remote-notification
+        CKSharingSupported: true
+        NSPhotoLibraryUsageDescription: "Karteria lets you select proof images or a short video for an anonymous checkpoint review."
+        NSCameraUsageDescription: "Karteria lets you capture proof for a private practice checkpoint."
+        NSMicrophoneUsageDescription: "Karteria can include audio when you record a proof video for a checkpoint."
+        NSSpeechRecognitionUsageDescription: "Karteria can transcribe your selected proof video on device before an evidence preflight check."
+        KARTERIA_WORKER_URL: ""
+        KARTERIA_SUPPORT_EMAIL: "tel0955850213@yahoo.com.tw"
+        REVENUECAT_PUBLIC_SDK_KEY: ""
+
+  KarteriaTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "18.0"
+    sources:
+      - path: KarteriaTests
+    dependencies:
+      - target: Karteria
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.donaldlin.karteria.tests
+        GENERATE_INFOPLIST_FILE: YES
+
+  KarteriaUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    deploymentTarget: "18.0"
+    sources:
+      - path: KarteriaUITests
+    dependencies:
+      - target: Karteria
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.donaldlin.karteria.uitests
+        GENERATE_INFOPLIST_FILE: YES
+
+schemes:
+  Karteria:
+    build:
+      targets:
+        Karteria: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets:
+        - KarteriaTests
+        - KarteriaUITests
+    profile:
+      config: Release
+    analyze:
+      config: Debug
+    archive:
+      config: Release

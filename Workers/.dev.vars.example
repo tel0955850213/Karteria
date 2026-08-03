@@ -1,0 +1,10 @@
+# Copy to .dev.vars only for local Worker development. Never commit real values.
+IDENTITY_HASH_SALT=replace-with-a-long-random-value
+SUBMISSION_DRAFT_SECRET=replace-with-a-second-long-random-value
+CLOUDKIT_KEY_ID=CloudKit-server-to-server-key-id
+# Base64-encoded PKCS#8 DER P-256 private key. Do not use a PEM file directly.
+CLOUDKIT_PRIVATE_KEY_PKCS8_B64=base64-pkcs8-private-key
+REVENUECAT_V2_SECRET_KEY=sk_xxx
+REVENUECAT_PROJECT_ID=project-id
+REVENUECAT_PRO_ENTITLEMENT_ID=pro
+MODERATOR_API_KEY=replace-with-a-third-long-random-value

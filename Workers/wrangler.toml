@@ -1,0 +1,14 @@
+name = "karteria-review-exchange"
+main = "src/index.ts"
+compatibility_date = "2026-07-31"
+workers_dev = true
+
+# This project is designed for the Cloudflare Workers Free plan only. Do not add
+# a billing account, paid bindings, or a custom-domain route that fails open.
+[vars]
+APPLE_BUNDLE_ID = "com.donaldlin.karteria"
+CLOUDKIT_CONTAINER = "iCloud.com.donaldlin.karteria"
+CLOUDKIT_ENVIRONMENT = "development"
+
+[triggers]
+crons = ["0 3 * * *"]

@@ -1,0 +1,856 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05C153883F8EFEEA67B18EE2 /* KarteriaDomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8795C41E8D1AB9DE7072621B /* KarteriaDomainTests.swift */; };
+		066386776613EC846C5CAD90 /* EvidenceSafetyAndPreflight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2586317B76BB5C7E1EB22C /* EvidenceSafetyAndPreflight.swift */; };
+		1746FC4B4DD5AC0221155CC5 /* RemoteEvidenceDeletionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B759AAAC5693118CBB1B7098 /* RemoteEvidenceDeletionService.swift */; };
+		1C7285B438DB0AD0236FEA62 /* CommunityAccessStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCFC14B33F74C9F10FA8322 /* CommunityAccessStore.swift */; };
+		1F67627913DB57C08B9F00EF /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 95D94EB794F33C55E68D0CA7 /* PrivacyInfo.xcprivacy */; };
+		2323A5F537F0A973E4D7D169 /* KarteriaTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E108A3389B967FF4CFBE8279 /* KarteriaTheme.swift */; };
+		30CEEA481B8A7B1B6F57D8EA /* PracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E4EBC1921A368B1836E386 /* PracticeView.swift */; };
+		37BB9F1FF38CF96DA6C90C11 /* KarteriaDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9AFF9F2C10AAB3EA6581F6 /* KarteriaDomain.swift */; };
+		37FEEAC9EBD5F7DCEED350FF /* EvidenceContractSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5D7A040CFE0DA46BD045BE /* EvidenceContractSheet.swift */; };
+		3FCA62612B22CF21E8407C8F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C73FCE00696BFF168C674CAC /* AVFoundation.framework */; };
+		46DF484F92006D0E095D29B4 /* KarteriaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F560474C73AA7526561E0D2F /* KarteriaUITests.swift */; };
+		4BD25F68C467F9DEB0C6952A /* PracticeReminderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D7E6B91F7C691FF8A8CD0E /* PracticeReminderService.swift */; };
+		4DF1B7B64DC6D527CFDD481E /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E4FD07D0AC160CF4838635 /* CloudKit.framework */; };
+		524F5B860425E9FF2A697FFD /* JourneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFC11BF9469D87E8F74FF59 /* JourneyView.swift */; };
+		57BA501AFB5F39AC91AA0B45 /* PrivateDataExportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92614F9E7AFC2104F52610D /* PrivateDataExportService.swift */; };
+		590D8A743A0B69254929A0C8 /* ProofViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96960BB759D35646D4F687C1 /* ProofViews.swift */; };
+		5B3C42CDF545B99C786D48BB /* PhotosUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3260DD2E3447BDEE7E35DE9 /* PhotosUI.framework */; };
+		628868847468405A936ACD4D /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7C59A678020584FF9D2BA35 /* AuthenticationServices.framework */; };
+		62A0C6F9529080CDAA457532 /* PrivateJourneyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2784A079238D00F8DAB7037B /* PrivateJourneyRepository.swift */; };
+		6A9B24E90E3E18BFB24B77B4 /* ExchangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6D53B546063048E2915EBA /* ExchangeView.swift */; };
+		6C570664B9FA9ADBCD0C131D /* PrivateModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7E5D5B8C28BCE5B9D19568 /* PrivateModels.swift */; };
+		7783712E21B1557D27533180 /* TrustedReviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1005578F17C7609C7A6D898 /* TrustedReviewService.swift */; };
+		7BE8354312998F88A5B256D9 /* ReviewSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A4D27CE4194627F276D875 /* ReviewSessionView.swift */; };
+		7D414E8FFCAF7089C4DFC1FF /* EvidenceRedactionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9DFE247555CD6B943211DA /* EvidenceRedactionSheet.swift */; };
+		82C4E1CA8E261FC2DDA3D1A6 /* GoalCreationSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B7E8B5CA67D5BF1CB5A9F4 /* GoalCreationSheet.swift */; };
+		8785FC9C1CF4528756832448 /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = C3C7B395B352DAD4FB9072EB /* ZIPFoundation */; };
+		895709575367387076DF1B19 /* KarteriaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5AB6BACCE3AA7F3C774E24 /* KarteriaApp.swift */; };
+		92A2C1363C07F76814430B15 /* Vision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2BE3EC4610BB81CCF6F1A75 /* Vision.framework */; };
+		95186A9DD5A3FAD7968E769C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D19707AB079AFFEAAD390185 /* Assets.xcassets */; };
+		95E57F955505BE2519E917EB /* EvidenceMediaStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101705D4F84417347F58FB63 /* EvidenceMediaStore.swift */; };
+		A27AC74D3FF466FFE6389FAB /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225DB760C99D6A0E167F129B /* SettingsView.swift */; };
+		A4824BB80408B6296AB92C76 /* KarteriaRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A739106533B43D8155FC89FF /* KarteriaRootView.swift */; };
+		B401840B992E0DEA3B0B25D7 /* KarteriaAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E13AAADEE882644602C1E5 /* KarteriaAppDelegate.swift */; };
+		B5AF58F3041067E63E8A9E95 /* SensitiveContentAnalysis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010AE152EBAB95765A165802 /* SensitiveContentAnalysis.framework */; };
+		C26FBF794E23E7A35320F213 /* GrowthStorySheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13414DCAA1B147F00C79DB9 /* GrowthStorySheet.swift */; };
+		C354FD03F5B0E30F51FBA574 /* CheckpointSubmissionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF961962B1C77808883115 /* CheckpointSubmissionSheet.swift */; };
+		C7538FAD891747BDDA7E6942 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC1F116B071EF7334119091 /* UserNotifications.framework */; };
+		CA15AB499624A3D094D814B0 /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F1AC52C92C5593207748B61 /* Speech.framework */; };
+		CF26768485F52256532A819B /* EntitlementStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EFEDBEFA0657E2D2178EA3 /* EntitlementStore.swift */; };
+		DB8C5E763B38542998885660 /* ReviewWorkItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E28E8ABEB2A76E8C23D80 /* ReviewWorkItem.swift */; };
+		DBEDF8227F51B8E818B0232B /* ReviewExchangeClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236C2452383FD3D276DDDE6A /* ReviewExchangeClient.swift */; };
+		E06841E575207BB54B23D39D /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = A2BE6B1D8BF1105ABF499A91 /* RevenueCat */; };
+		F7BC5DF4C2EF404234A7D821 /* PracticeScheduleSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438DCA0D9608B47F27D10EC3 /* PracticeScheduleSheet.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1803E4D82A3FA3B27CA9A416 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7BB66FBEC94031F005286A2B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA673AEFA41E52BD050744EE;
+			remoteInfo = Karteria;
+		};
+		E7A528DE1E249F0FF0CDDFD7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7BB66FBEC94031F005286A2B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA673AEFA41E52BD050744EE;
+			remoteInfo = Karteria;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		010AE152EBAB95765A165802 /* SensitiveContentAnalysis.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SensitiveContentAnalysis.framework; path = System/Library/Frameworks/SensitiveContentAnalysis.framework; sourceTree = SDKROOT; };
+		08E4FD07D0AC160CF4838635 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		0A5D7A040CFE0DA46BD045BE /* EvidenceContractSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvidenceContractSheet.swift; sourceTree = "<group>"; };
+		101705D4F84417347F58FB63 /* EvidenceMediaStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvidenceMediaStore.swift; sourceTree = "<group>"; };
+		10B7E8B5CA67D5BF1CB5A9F4 /* GoalCreationSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCreationSheet.swift; sourceTree = "<group>"; };
+		20A4D27CE4194627F276D875 /* ReviewSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewSessionView.swift; sourceTree = "<group>"; };
+		225DB760C99D6A0E167F129B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		236C2452383FD3D276DDDE6A /* ReviewExchangeClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewExchangeClient.swift; sourceTree = "<group>"; };
+		2784A079238D00F8DAB7037B /* PrivateJourneyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateJourneyRepository.swift; sourceTree = "<group>"; };
+		29F847F9B312BFA18D84039E /* Karteria.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Karteria.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BC9A80C0C2A69FA44E06D1C /* KarteriaTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = KarteriaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C5AB6BACCE3AA7F3C774E24 /* KarteriaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KarteriaApp.swift; sourceTree = "<group>"; };
+		2CD8F60348BDFE00E22BAF69 /* KarteriaUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = KarteriaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DCFC14B33F74C9F10FA8322 /* CommunityAccessStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityAccessStore.swift; sourceTree = "<group>"; };
+		3DFF961962B1C77808883115 /* CheckpointSubmissionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckpointSubmissionSheet.swift; sourceTree = "<group>"; };
+		438DCA0D9608B47F27D10EC3 /* PracticeScheduleSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeScheduleSheet.swift; sourceTree = "<group>"; };
+		49D7E6B91F7C691FF8A8CD0E /* PracticeReminderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeReminderService.swift; sourceTree = "<group>"; };
+		6F1AC52C92C5593207748B61 /* Speech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Speech.framework; path = System/Library/Frameworks/Speech.framework; sourceTree = SDKROOT; };
+		744E28E8ABEB2A76E8C23D80 /* ReviewWorkItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewWorkItem.swift; sourceTree = "<group>"; };
+		74EFEDBEFA0657E2D2178EA3 /* EntitlementStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntitlementStore.swift; sourceTree = "<group>"; };
+		77E13AAADEE882644602C1E5 /* KarteriaAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KarteriaAppDelegate.swift; sourceTree = "<group>"; };
+		8795C41E8D1AB9DE7072621B /* KarteriaDomainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KarteriaDomainTests.swift; sourceTree = "<group>"; };
+		8C7E5D5B8C28BCE5B9D19568 /* PrivateModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateModels.swift; sourceTree = "<group>"; };
+		95D94EB794F33C55E68D0CA7 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		96960BB759D35646D4F687C1 /* ProofViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProofViews.swift; sourceTree = "<group>"; };
+		9B2586317B76BB5C7E1EB22C /* EvidenceSafetyAndPreflight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvidenceSafetyAndPreflight.swift; sourceTree = "<group>"; };
+		9D6D53B546063048E2915EBA /* ExchangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeView.swift; sourceTree = "<group>"; };
+		9DC1F116B071EF7334119091 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		A1005578F17C7609C7A6D898 /* TrustedReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustedReviewService.swift; sourceTree = "<group>"; };
+		A739106533B43D8155FC89FF /* KarteriaRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KarteriaRootView.swift; sourceTree = "<group>"; };
+		A92614F9E7AFC2104F52610D /* PrivateDataExportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateDataExportService.swift; sourceTree = "<group>"; };
+		ADFC11BF9469D87E8F74FF59 /* JourneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyView.swift; sourceTree = "<group>"; };
+		B759AAAC5693118CBB1B7098 /* RemoteEvidenceDeletionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteEvidenceDeletionService.swift; sourceTree = "<group>"; };
+		C13414DCAA1B147F00C79DB9 /* GrowthStorySheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthStorySheet.swift; sourceTree = "<group>"; };
+		C43BDB1A9A24DA965115A452 /* Karteria.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Karteria.entitlements; sourceTree = "<group>"; };
+		C73FCE00696BFF168C674CAC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		C7C59A678020584FF9D2BA35 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
+		CD9AFF9F2C10AAB3EA6581F6 /* KarteriaDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KarteriaDomain.swift; sourceTree = "<group>"; };
+		CE9DFE247555CD6B943211DA /* EvidenceRedactionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvidenceRedactionSheet.swift; sourceTree = "<group>"; };
+		D19707AB079AFFEAAD390185 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E108A3389B967FF4CFBE8279 /* KarteriaTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KarteriaTheme.swift; sourceTree = "<group>"; };
+		E2BE3EC4610BB81CCF6F1A75 /* Vision.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Vision.framework; path = System/Library/Frameworks/Vision.framework; sourceTree = SDKROOT; };
+		E82FE7B9537ED709B60D94ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F3260DD2E3447BDEE7E35DE9 /* PhotosUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotosUI.framework; path = System/Library/Frameworks/PhotosUI.framework; sourceTree = SDKROOT; };
+		F4E4EBC1921A368B1836E386 /* PracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeView.swift; sourceTree = "<group>"; };
+		F560474C73AA7526561E0D2F /* KarteriaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KarteriaUITests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7E800FEEFDF2EBEE1D1FB168 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E06841E575207BB54B23D39D /* RevenueCat in Frameworks */,
+				8785FC9C1CF4528756832448 /* ZIPFoundation in Frameworks */,
+				628868847468405A936ACD4D /* AuthenticationServices.framework in Frameworks */,
+				4DF1B7B64DC6D527CFDD481E /* CloudKit.framework in Frameworks */,
+				5B3C42CDF545B99C786D48BB /* PhotosUI.framework in Frameworks */,
+				B5AF58F3041067E63E8A9E95 /* SensitiveContentAnalysis.framework in Frameworks */,
+				3FCA62612B22CF21E8407C8F /* AVFoundation.framework in Frameworks */,
+				92A2C1363C07F76814430B15 /* Vision.framework in Frameworks */,
+				CA15AB499624A3D094D814B0 /* Speech.framework in Frameworks */,
+				C7538FAD891747BDDA7E6942 /* UserNotifications.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		03C12E7E06B44E6E995AB29F /* KarteriaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F560474C73AA7526561E0D2F /* KarteriaUITests.swift */,
+			);
+			path = KarteriaUITests;
+			sourceTree = "<group>";
+		};
+		0D765EB13B2C785E7432EF38 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				E108A3389B967FF4CFBE8279 /* KarteriaTheme.swift */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		16EC9B687BE92536E52DEBF6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C7C59A678020584FF9D2BA35 /* AuthenticationServices.framework */,
+				C73FCE00696BFF168C674CAC /* AVFoundation.framework */,
+				08E4FD07D0AC160CF4838635 /* CloudKit.framework */,
+				F3260DD2E3447BDEE7E35DE9 /* PhotosUI.framework */,
+				010AE152EBAB95765A165802 /* SensitiveContentAnalysis.framework */,
+				6F1AC52C92C5593207748B61 /* Speech.framework */,
+				9DC1F116B071EF7334119091 /* UserNotifications.framework */,
+				E2BE3EC4610BB81CCF6F1A75 /* Vision.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1D3A07E53383F92E5A0AD469 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				225DB760C99D6A0E167F129B /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		4D9416CE61625E894F33D514 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				3DCFC14B33F74C9F10FA8322 /* CommunityAccessStore.swift */,
+				74EFEDBEFA0657E2D2178EA3 /* EntitlementStore.swift */,
+				2C5AB6BACCE3AA7F3C774E24 /* KarteriaApp.swift */,
+				77E13AAADEE882644602C1E5 /* KarteriaAppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		56CFCA6E0C9CE4E3828CDF1B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				101705D4F84417347F58FB63 /* EvidenceMediaStore.swift */,
+				9B2586317B76BB5C7E1EB22C /* EvidenceSafetyAndPreflight.swift */,
+				49D7E6B91F7C691FF8A8CD0E /* PracticeReminderService.swift */,
+				A92614F9E7AFC2104F52610D /* PrivateDataExportService.swift */,
+				2784A079238D00F8DAB7037B /* PrivateJourneyRepository.swift */,
+				B759AAAC5693118CBB1B7098 /* RemoteEvidenceDeletionService.swift */,
+				236C2452383FD3D276DDDE6A /* ReviewExchangeClient.swift */,
+				A1005578F17C7609C7A6D898 /* TrustedReviewService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		576CD3B1AF146BDB671E1376 = {
+			isa = PBXGroup;
+			children = (
+				EBB71E49E4009BA0095AD957 /* Karteria */,
+				CF66B83C31373656BDE2845D /* KarteriaTests */,
+				03C12E7E06B44E6E995AB29F /* KarteriaUITests */,
+				16EC9B687BE92536E52DEBF6 /* Frameworks */,
+				A7A7761870664BD9F809FB78 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		63E926E64616FC9264A436A8 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				CD9AFF9F2C10AAB3EA6581F6 /* KarteriaDomain.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		6B0ED1C5502A7935319D2C5F /* Exchange */ = {
+			isa = PBXGroup;
+			children = (
+				9D6D53B546063048E2915EBA /* ExchangeView.swift */,
+				20A4D27CE4194627F276D875 /* ReviewSessionView.swift */,
+			);
+			path = Exchange;
+			sourceTree = "<group>";
+		};
+		99C456F1AAE964998F079F0A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				96960BB759D35646D4F687C1 /* ProofViews.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		A7439E4D111FC16837680F37 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				10B7E8B5CA67D5BF1CB5A9F4 /* GoalCreationSheet.swift */,
+				A739106533B43D8155FC89FF /* KarteriaRootView.swift */,
+				99C456F1AAE964998F079F0A /* Components */,
+				6B0ED1C5502A7935319D2C5F /* Exchange */,
+				C72133955D73B415E30ABF42 /* Journey */,
+				ED9EEF935D26BF6D46ACA5FD /* Practice */,
+				1D3A07E53383F92E5A0AD469 /* Settings */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A7A7761870664BD9F809FB78 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				29F847F9B312BFA18D84039E /* Karteria.app */,
+				2BC9A80C0C2A69FA44E06D1C /* KarteriaTests.xctest */,
+				2CD8F60348BDFE00E22BAF69 /* KarteriaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C38146B44B30A508B853EBCE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8C7E5D5B8C28BCE5B9D19568 /* PrivateModels.swift */,
+				744E28E8ABEB2A76E8C23D80 /* ReviewWorkItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C72133955D73B415E30ABF42 /* Journey */ = {
+			isa = PBXGroup;
+			children = (
+				C13414DCAA1B147F00C79DB9 /* GrowthStorySheet.swift */,
+				ADFC11BF9469D87E8F74FF59 /* JourneyView.swift */,
+			);
+			path = Journey;
+			sourceTree = "<group>";
+		};
+		CF66B83C31373656BDE2845D /* KarteriaTests */ = {
+			isa = PBXGroup;
+			children = (
+				8795C41E8D1AB9DE7072621B /* KarteriaDomainTests.swift */,
+			);
+			path = KarteriaTests;
+			sourceTree = "<group>";
+		};
+		EBB71E49E4009BA0095AD957 /* Karteria */ = {
+			isa = PBXGroup;
+			children = (
+				D19707AB079AFFEAAD390185 /* Assets.xcassets */,
+				E82FE7B9537ED709B60D94ED /* Info.plist */,
+				C43BDB1A9A24DA965115A452 /* Karteria.entitlements */,
+				95D94EB794F33C55E68D0CA7 /* PrivacyInfo.xcprivacy */,
+				4D9416CE61625E894F33D514 /* App */,
+				0D765EB13B2C785E7432EF38 /* DesignSystem */,
+				63E926E64616FC9264A436A8 /* Domain */,
+				C38146B44B30A508B853EBCE /* Models */,
+				56CFCA6E0C9CE4E3828CDF1B /* Services */,
+				A7439E4D111FC16837680F37 /* Views */,
+			);
+			path = Karteria;
+			sourceTree = "<group>";
+		};
+		ED9EEF935D26BF6D46ACA5FD /* Practice */ = {
+			isa = PBXGroup;
+			children = (
+				3DFF961962B1C77808883115 /* CheckpointSubmissionSheet.swift */,
+				0A5D7A040CFE0DA46BD045BE /* EvidenceContractSheet.swift */,
+				CE9DFE247555CD6B943211DA /* EvidenceRedactionSheet.swift */,
+				438DCA0D9608B47F27D10EC3 /* PracticeScheduleSheet.swift */,
+				F4E4EBC1921A368B1836E386 /* PracticeView.swift */,
+			);
+			path = Practice;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3A6348B483122F5A188A92B1 /* KarteriaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49506A5DA86AFB33AC52D8E3 /* Build configuration list for PBXNativeTarget "KarteriaTests" */;
+			buildPhases = (
+				7577ABC3B609EDA1FB39E67D /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A722F7D7643946497B968EB5 /* PBXTargetDependency */,
+			);
+			name = KarteriaTests;
+			packageProductDependencies = (
+			);
+			productName = KarteriaTests;
+			productReference = 2BC9A80C0C2A69FA44E06D1C /* KarteriaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		69FB99E967037BF4D1DDBFEC /* KarteriaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92AF98DC870D147EBADA4729 /* Build configuration list for PBXNativeTarget "KarteriaUITests" */;
+			buildPhases = (
+				54812739FBB4F478EB030F01 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				91C3EF44D45D6B3E94692CFB /* PBXTargetDependency */,
+			);
+			name = KarteriaUITests;
+			packageProductDependencies = (
+			);
+			productName = KarteriaUITests;
+			productReference = 2CD8F60348BDFE00E22BAF69 /* KarteriaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		AA673AEFA41E52BD050744EE /* Karteria */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4356B8E1723763A12BDF64AD /* Build configuration list for PBXNativeTarget "Karteria" */;
+			buildPhases = (
+				FDC75A284120960C2C65B8F1 /* Verify Release Configuration */,
+				362EAC0E6A0F185E2E5B6342 /* Sources */,
+				EA6E5808AB519D78AC859FC3 /* Resources */,
+				7E800FEEFDF2EBEE1D1FB168 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Karteria;
+			packageProductDependencies = (
+				A2BE6B1D8BF1105ABF499A91 /* RevenueCat */,
+				C3C7B395B352DAD4FB9072EB /* ZIPFoundation */,
+			);
+			productName = Karteria;
+			productReference = 29F847F9B312BFA18D84039E /* Karteria.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7BB66FBEC94031F005286A2B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					3A6348B483122F5A188A92B1 = {
+						DevelopmentTeam = 9A686AFY6S;
+						ProvisioningStyle = Automatic;
+					};
+					69FB99E967037BF4D1DDBFEC = {
+						DevelopmentTeam = 9A686AFY6S;
+						ProvisioningStyle = Automatic;
+						TestTargetID = AA673AEFA41E52BD050744EE;
+					};
+					AA673AEFA41E52BD050744EE = {
+						DevelopmentTeam = 9A686AFY6S;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 45F89193CDA06677353F0066 /* Build configuration list for PBXProject "Karteria" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 576CD3B1AF146BDB671E1376;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				C75E476A8CFB29F76F1BEAE4 /* XCRemoteSwiftPackageReference "purchases-ios-spm" */,
+				EFF3C5DF5826DE76A5FA3F4E /* XCRemoteSwiftPackageReference "ZIPFoundation" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = A7A7761870664BD9F809FB78 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AA673AEFA41E52BD050744EE /* Karteria */,
+				3A6348B483122F5A188A92B1 /* KarteriaTests */,
+				69FB99E967037BF4D1DDBFEC /* KarteriaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EA6E5808AB519D78AC859FC3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95186A9DD5A3FAD7968E769C /* Assets.xcassets in Resources */,
+				1F67627913DB57C08B9F00EF /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FDC75A284120960C2C65B8F1 /* Verify Release Configuration */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Verify Release Configuration";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = scripts/verify_release_config.sh;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		362EAC0E6A0F185E2E5B6342 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C354FD03F5B0E30F51FBA574 /* CheckpointSubmissionSheet.swift in Sources */,
+				1C7285B438DB0AD0236FEA62 /* CommunityAccessStore.swift in Sources */,
+				CF26768485F52256532A819B /* EntitlementStore.swift in Sources */,
+				37FEEAC9EBD5F7DCEED350FF /* EvidenceContractSheet.swift in Sources */,
+				95E57F955505BE2519E917EB /* EvidenceMediaStore.swift in Sources */,
+				7D414E8FFCAF7089C4DFC1FF /* EvidenceRedactionSheet.swift in Sources */,
+				066386776613EC846C5CAD90 /* EvidenceSafetyAndPreflight.swift in Sources */,
+				6A9B24E90E3E18BFB24B77B4 /* ExchangeView.swift in Sources */,
+				82C4E1CA8E261FC2DDA3D1A6 /* GoalCreationSheet.swift in Sources */,
+				C26FBF794E23E7A35320F213 /* GrowthStorySheet.swift in Sources */,
+				524F5B860425E9FF2A697FFD /* JourneyView.swift in Sources */,
+				895709575367387076DF1B19 /* KarteriaApp.swift in Sources */,
+				B401840B992E0DEA3B0B25D7 /* KarteriaAppDelegate.swift in Sources */,
+				37BB9F1FF38CF96DA6C90C11 /* KarteriaDomain.swift in Sources */,
+				A4824BB80408B6296AB92C76 /* KarteriaRootView.swift in Sources */,
+				2323A5F537F0A973E4D7D169 /* KarteriaTheme.swift in Sources */,
+				4BD25F68C467F9DEB0C6952A /* PracticeReminderService.swift in Sources */,
+				F7BC5DF4C2EF404234A7D821 /* PracticeScheduleSheet.swift in Sources */,
+				30CEEA481B8A7B1B6F57D8EA /* PracticeView.swift in Sources */,
+				57BA501AFB5F39AC91AA0B45 /* PrivateDataExportService.swift in Sources */,
+				62A0C6F9529080CDAA457532 /* PrivateJourneyRepository.swift in Sources */,
+				6C570664B9FA9ADBCD0C131D /* PrivateModels.swift in Sources */,
+				590D8A743A0B69254929A0C8 /* ProofViews.swift in Sources */,
+				1746FC4B4DD5AC0221155CC5 /* RemoteEvidenceDeletionService.swift in Sources */,
+				DBEDF8227F51B8E818B0232B /* ReviewExchangeClient.swift in Sources */,
+				7BE8354312998F88A5B256D9 /* ReviewSessionView.swift in Sources */,
+				DB8C5E763B38542998885660 /* ReviewWorkItem.swift in Sources */,
+				A27AC74D3FF466FFE6389FAB /* SettingsView.swift in Sources */,
+				7783712E21B1557D27533180 /* TrustedReviewService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		54812739FBB4F478EB030F01 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46DF484F92006D0E095D29B4 /* KarteriaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7577ABC3B609EDA1FB39E67D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05C153883F8EFEEA67B18EE2 /* KarteriaDomainTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		91C3EF44D45D6B3E94692CFB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA673AEFA41E52BD050744EE /* Karteria */;
+			targetProxy = E7A528DE1E249F0FF0CDDFD7 /* PBXContainerItemProxy */;
+		};
+		A722F7D7643946497B968EB5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA673AEFA41E52BD050744EE /* Karteria */;
+			targetProxy = 1803E4D82A3FA3B27CA9A416 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0502F462163FA396A7EBD57C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.donaldlin.karteria.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Karteria.app/Karteria";
+			};
+			name = Debug;
+		};
+		202E8700BB54D9684F9CECB2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 9A686AFY6S;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		30625649FD20400197D7CAF6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.donaldlin.karteria.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Karteria.app/Karteria";
+			};
+			name = Release;
+		};
+		5F011A251638C2EE5C1F469A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 9A686AFY6S;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		6B79F8FF50449D631B6AF508 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Karteria/Karteria.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Karteria/Info.plist;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.donaldlin.karteria;
+				PRODUCT_NAME = Karteria;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		CB73DEB5BDBD6A87515BDDBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.donaldlin.karteria.uitests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Karteria;
+			};
+			name = Release;
+		};
+		E6DE35694F9A614AA4B0F658 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Karteria/Karteria.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Karteria/Info.plist;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.donaldlin.karteria;
+				PRODUCT_NAME = Karteria;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		F0C62A8086536E03242CEF39 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.donaldlin.karteria.uitests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Karteria;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4356B8E1723763A12BDF64AD /* Build configuration list for PBXNativeTarget "Karteria" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6DE35694F9A614AA4B0F658 /* Debug */,
+				6B79F8FF50449D631B6AF508 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		45F89193CDA06677353F0066 /* Build configuration list for PBXProject "Karteria" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				202E8700BB54D9684F9CECB2 /* Debug */,
+				5F011A251638C2EE5C1F469A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		49506A5DA86AFB33AC52D8E3 /* Build configuration list for PBXNativeTarget "KarteriaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0502F462163FA396A7EBD57C /* Debug */,
+				30625649FD20400197D7CAF6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		92AF98DC870D147EBADA4729 /* Build configuration list for PBXNativeTarget "KarteriaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0C62A8086536E03242CEF39 /* Debug */,
+				CB73DEB5BDBD6A87515BDDBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C75E476A8CFB29F76F1BEAE4 /* XCRemoteSwiftPackageReference "purchases-ios-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RevenueCat/purchases-ios-spm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		EFF3C5DF5826DE76A5FA3F4E /* XCRemoteSwiftPackageReference "ZIPFoundation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/weichsel/ZIPFoundation.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A2BE6B1D8BF1105ABF499A91 /* RevenueCat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C75E476A8CFB29F76F1BEAE4 /* XCRemoteSwiftPackageReference "purchases-ios-spm" */;
+			productName = RevenueCat;
+		};
+		C3C7B395B352DAD4FB9072EB /* ZIPFoundation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EFF3C5DF5826DE76A5FA3F4E /* XCRemoteSwiftPackageReference "ZIPFoundation" */;
+			productName = ZIPFoundation;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 7BB66FBEC94031F005286A2B /* Project object */;
+}
