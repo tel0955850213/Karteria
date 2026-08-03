@@ -1,0 +1,15 @@
+Karteria's private practice flow is fully usable without an account, subscription, iCloud, or community access.
+
+Suggested review path:
+1. Complete onboarding and create a goal.
+2. Open Practice and complete a private rep or its two-minute fallback.
+3. Open Journey to inspect levels, the evidence contract, and before/after history.
+4. Open Settings to inspect export, deletion, age-gate, Sign in with Apple, and purchase restoration controls.
+
+Anonymous Exchange requires iCloud, Sign in with Apple, an age of 18 or older, and available peer-review inventory. New accounts receive three review credits. Reviewers must complete five calibration cases with at least four correct before entering the queue. If no claimable work exists, submission does not debit credits.
+
+The app never uses AI as a review vote. On-device evidence preflight is optional and has a manual-checklist fallback. Users aged 13 to 17 can use private practice and invite-only CloudKit trusted review, but cannot access the anonymous public queue.
+
+The app includes user reporting, blocking, evidence removal, private-data export, account-data deletion, Sensitive Content Analysis, OCR privacy warnings, and a public support contact. Raw anonymous evidence is scheduled for deletion 30 days after settlement.
+
+Karteria Pro uses RevenueCat with StoreKit subscriptions. Free members retain the complete practice and human-verification core. Pro cannot buy votes, skip calibration, or bypass human verification.

@@ -284,6 +284,10 @@ struct PaywallView: View {
                                             .font(.headline)
                                         Text(package.storeProduct.localizedPriceString)
                                             .font(.subheadline)
+                                        if package.packageType == .annual {
+                                            Text("7-day free trial, then annual billing")
+                                                .font(.caption.weight(.semibold))
+                                        }
                                     }
                                     Spacer()
                                     Image(systemName: "arrow.right")
@@ -312,6 +316,16 @@ struct PaywallView: View {
                     Text("Community Pro Pass: nine settled, quality reviews earn seven days of Pro, up to fourteen days in each rolling thirty-day period.")
                         .font(.caption)
                         .foregroundStyle(Color.karteriaMuted)
+
+                    Text("Subscriptions renew automatically unless canceled at least 24 hours before the current period ends. Payment is charged to your Apple Account. Manage or cancel in Apple Account settings.")
+                        .font(.caption)
+                        .foregroundStyle(Color.karteriaMuted)
+
+                    HStack(spacing: 16) {
+                        Link("Privacy Policy", destination: URL(string: "https://tel0955850213.github.io/Karteria/privacy-policy.html")!)
+                        Link("Terms of Use", destination: URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!)
+                    }
+                    .font(.caption.weight(.semibold))
                 }
                 .padding(20)
             }

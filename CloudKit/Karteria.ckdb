@@ -1,0 +1,117 @@
+DEFINE SCHEMA
+
+CREATE ROLE Moderator;
+
+RECORD TYPE ReviewSubmission (
+    submissionID STRING QUERYABLE,
+    ownerSubjectHash STRING,
+    state STRING QUERYABLE,
+    submittedAt INT64 QUERYABLE SORTABLE,
+    settledAt INT64,
+    cleanupAt INT64,
+    contractTitle STRING,
+    baselineSummary STRING,
+    criteriaJSON STRING,
+    explanation STRING,
+    baselineManifestJSON STRING,
+    checkpointManifestJSON STRING,
+    failedCriteriaIndexesJSON STRING,
+    reportCount INT64,
+    baselineAsset1 ASSET,
+    baselineAsset2 ASSET,
+    baselineAsset3 ASSET,
+    checkpointAsset1 ASSET,
+    checkpointAsset2 ASSET,
+    checkpointAsset3 ASSET,
+    GRANT WRITE, CREATE, READ TO Moderator
+);
+
+RECORD TYPE ReviewSeat (
+    seatID STRING QUERYABLE,
+    submissionID STRING QUERYABLE,
+    ownerSubjectHash STRING,
+    reviewerSubjectHash STRING QUERYABLE,
+    state STRING QUERYABLE,
+    ordinal INT64,
+    submittedAt INT64,
+    claimedAt INT64,
+    claimUntil INT64 QUERYABLE SORTABLE,
+    completedAt INT64,
+    GRANT WRITE, CREATE, READ TO Moderator
+);
+
+RECORD TYPE PeerReview (
+    reviewID STRING,
+    submissionID STRING QUERYABLE,
+    seatID STRING,
+    reviewerSubjectHash STRING QUERYABLE,
+    decisionsJSON STRING,
+    note STRING,
+    passes INT64,
+    submittedAt INT64,
+    qualityEligible INT64 QUERYABLE,
+    settledAt INT64 QUERYABLE SORTABLE,
+    settlementID STRING,
+    GRANT WRITE, CREATE, READ TO Moderator
+);
+
+RECORD TYPE ReviewSettlement (
+    settlementID STRING,
+    submissionID STRING QUERYABLE,
+    ownerSubjectHash STRING,
+    outcome STRING,
+    failedCriteriaIndexesJSON STRING,
+    reviewedAt INT64,
+    cleanupAt INT64 QUERYABLE SORTABLE,
+    cleanupState STRING QUERYABLE,
+    evidencePurgedAt INT64,
+    GRANT WRITE, CREATE, READ TO Moderator
+);
+
+RECORD TYPE ReviewerStanding (
+    subjectHash STRING,
+    reviewCredits INT64,
+    calibrationCompleted INT64,
+    calibrationCorrect INT64,
+    calibrationStatus STRING,
+    communityPassAwardsJSON STRING,
+    blockedOwnerSubjectHashesJSON STRING,
+    GRANT WRITE, CREATE, READ TO Moderator
+);
+
+RECORD TYPE ContentReport (
+    submissionID STRING QUERYABLE,
+    reporterSubjectHash STRING,
+    reason STRING,
+    detail STRING,
+    state STRING QUERYABLE,
+    createdAt INT64 QUERYABLE SORTABLE,
+    GRANT WRITE, CREATE, READ TO Moderator
+);
+
+RECORD TYPE TrustedReviewSubmission (
+    goalTitle STRING,
+    contractTitle STRING,
+    baselineSummary STRING,
+    criteriaJSON STRING,
+    explanation STRING,
+    trustedReviewStatus STRING QUERYABLE,
+    submittedAt TIMESTAMP,
+    baselineAsset1 ASSET,
+    baselineAsset2 ASSET,
+    baselineAsset3 ASSET,
+    baselineKind1 STRING,
+    baselineKind2 STRING,
+    baselineKind3 STRING,
+    checkpointAsset1 ASSET,
+    checkpointAsset2 ASSET,
+    checkpointAsset3 ASSET,
+    checkpointKind1 STRING,
+    checkpointKind2 STRING,
+    checkpointKind3 STRING,
+    trustedDecision1 STRING,
+    trustedDecision2 STRING,
+    trustedDecision3 STRING,
+    trustedReviewerNote STRING,
+    trustedReviewedAt TIMESTAMP
+);

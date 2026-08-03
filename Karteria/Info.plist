@@ -37,7 +37,7 @@
 	<key>NSSpeechRecognitionUsageDescription</key>
 	<string>Karteria can transcribe your selected proof video on device before an evidence preflight check.</string>
 	<key>REVENUECAT_PUBLIC_SDK_KEY</key>
-	<string></string>
+	<string>appl_dzakXdbUmPsUQmkVvVFKLVYxbUy</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>

@@ -79,7 +79,7 @@ targets:
         NSSpeechRecognitionUsageDescription: "Karteria can transcribe your selected proof video on device before an evidence preflight check."
         KARTERIA_WORKER_URL: ""
         KARTERIA_SUPPORT_EMAIL: "tel0955850213@yahoo.com.tw"
-        REVENUECAT_PUBLIC_SDK_KEY: ""
+        REVENUECAT_PUBLIC_SDK_KEY: "appl_dzakXdbUmPsUQmkVvVFKLVYxbUy"
 
   KarteriaTests:
     type: bundle.unit-test
