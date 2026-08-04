@@ -77,7 +77,7 @@ targets:
         NSCameraUsageDescription: "Karteria lets you capture proof for a private practice checkpoint."
         NSMicrophoneUsageDescription: "Karteria can include audio when you record a proof video for a checkpoint."
         NSSpeechRecognitionUsageDescription: "Karteria can transcribe your selected proof video on device before an evidence preflight check."
-        KARTERIA_WORKER_URL: ""
+        KARTERIA_WORKER_URL: "https://karteria-review-exchange.tel0955850213.workers.dev"
         KARTERIA_SUPPORT_EMAIL: "tel0955850213@yahoo.com.tw"
         REVENUECAT_PUBLIC_SDK_KEY: "appl_dzakXdbUmPsUQmkVvVFKLVYxbUy"
 

@@ -27,7 +27,7 @@
 	<key>KARTERIA_SUPPORT_EMAIL</key>
 	<string>tel0955850213@yahoo.com.tw</string>
 	<key>KARTERIA_WORKER_URL</key>
-	<string></string>
+	<string>https://karteria-review-exchange.tel0955850213.workers.dev</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Karteria lets you capture proof for a private practice checkpoint.</string>
 	<key>NSMicrophoneUsageDescription</key>

@@ -37,6 +37,6 @@ npm test
 
 ## Configuration state
 
-The repository intentionally contains no Apple, CloudKit, Cloudflare, or RevenueCat secret. An empty `KARTERIA_WORKER_URL` means anonymous submission fails closed while private practice remains fully usable. Evidence owners can remove their public raw proof, trusted-share owners can revoke an invite, and full private-data deletion stops if remaining remote copies cannot be verified and removed. Read [CloudKit setup](docs/CLOUDKIT_SETUP.md), [Worker setup](docs/WORKER_SETUP.md), and [RevenueCat setup](docs/REVENUECAT_SETUP.md) before configuring a release build.
+The repository intentionally contains no Apple, CloudKit, Cloudflare, or RevenueCat secret. Release builds use the public `KARTERIA_WORKER_URL`; the Worker keeps CloudKit and RevenueCat credentials in Cloudflare secrets. If the Worker is unavailable, anonymous submission fails closed while private practice remains fully usable. Evidence owners can remove their public raw proof, trusted-share owners can revoke an invite, and full private-data deletion stops if remaining remote copies cannot be verified and removed. Read [CloudKit setup](docs/CLOUDKIT_SETUP.md), [Worker setup](docs/WORKER_SETUP.md), and [RevenueCat setup](docs/REVENUECAT_SETUP.md) before changing the deployment.
 
-No cloud resource, billing account, payment method, Worker deployment, App Store Connect app, or RevenueCat project is created by this repository.
+The production CloudKit schema, Cloudflare Worker, App Store Connect app, and RevenueCat project are configured outside Git. No billing account or payment method is required by the deployed Worker architecture.

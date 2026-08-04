@@ -8,7 +8,6 @@ workers_dev = true
 [vars]
 APPLE_BUNDLE_ID = "com.donaldlin.karteria"
 CLOUDKIT_CONTAINER = "iCloud.com.donaldlin.karteria"
-CLOUDKIT_ENVIRONMENT = "development"
-
-[triggers]
-crons = ["0 3 * * *"]
+CLOUDKIT_ENVIRONMENT = "production"
+REVENUECAT_PROJECT_ID = "28de8784"
+REVENUECAT_PRO_ENTITLEMENT_ID = "pro"

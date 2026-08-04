@@ -103,9 +103,13 @@ const jsonHeaders = {
     "X-Content-Type-Options": "nosniff",
 } as const;
 
+let lastMaintenanceAttemptAt = 0;
+const maintenanceIntervalMilliseconds = 6 * 60 * 60 * 1_000;
+
 export default {
-    async fetch(request: Request, environment: Env): Promise<Response> {
+    async fetch(request: Request, environment: Env, context: ExecutionContext): Promise<Response> {
         try {
+            scheduleMaintenance(environment, context);
             if (request.method === "OPTIONS") {
                 return new Response(null, { status: 204, headers: { Allow: "POST, OPTIONS", "Cache-Control": "no-store" } });
             }
@@ -135,6 +139,8 @@ export default {
                 return response(await reportContent(request, environment));
             case "/blocks":
                 return response(await blockSubmissionOwner(request, environment));
+            case "/moderation/health":
+                return response(await moderationHealth(request, environment));
             case "/moderation/submissions/remove":
                 return response(await removeSubmissionForModeration(request, environment));
             default:
@@ -150,6 +156,21 @@ export default {
         await purgeExpiredEvidence(client);
     },
 };
+
+function scheduleMaintenance(environment: Env, context: ExecutionContext): void {
+    const now = Date.now();
+    if (now - lastMaintenanceAttemptAt < maintenanceIntervalMilliseconds) {
+        return;
+    }
+    const client = new CloudKitClient(environment);
+    if (!client.isConfigured) {
+        return;
+    }
+    lastMaintenanceAttemptAt = now;
+    context.waitUntil(purgeExpiredEvidence(client).catch(() => {
+        lastMaintenanceAttemptAt = 0;
+    }));
+}
 
 async function initiateSubmission(request: Request, environment: Env): Promise<Record<string, unknown>> {
     const identity = await authenticatedIdentity(request, environment);
@@ -285,7 +306,7 @@ async function finalizeSubmission(request: Request, environment: Env): Promise<R
     }
 
     try {
-        await client.modify(operations, true);
+        await client.modify(operations);
     } catch (error) {
         const createdDuringRetry = await loadSubmission(client, manifest.submissionID);
         if (createdDuringRetry && createdDuringRetry.ownerSubjectHash === identity.subjectHash) {
@@ -411,7 +432,7 @@ async function claimReviewSlot(request: Request, environment: Env): Promise<Reco
             requiredChangeTag(candidate),
         );
         try {
-            await client.modify([{ operationType: "update", record: claimedRecord }], true);
+            await client.modify([{ operationType: "update", record: claimedRecord }]);
             return { workItem: reviewWorkItem(submission, seatIDFromRecord(candidate)), queueEmpty: false };
         } catch (error) {
             if (!(error instanceof CloudKitError)) {
@@ -494,7 +515,7 @@ async function submitPeerReview(request: Request, environment: Env): Promise<Rec
                     requiredChangeTag(standing.record),
                 ),
             },
-        ], true);
+        ]);
     } catch (error) {
         if (await getRecord(client, reviewName)) {
             return {
@@ -648,7 +669,7 @@ async function reportContent(request: Request, environment: Env): Promise<Record
                 requiredChangeTag(submission.record),
             ),
         },
-    ], true);
+    ]);
     return { accepted: true, duplicate: false };
 }
 
@@ -683,7 +704,7 @@ async function blockSubmissionOwner(request: Request, environment: Env): Promise
                     standingFields(updated),
                     requiredChangeTag(standing.record),
                 ),
-            }], true);
+            }]);
             return { blocked: true, duplicate: false };
         } catch (error) {
             if (!(error instanceof CloudKitError) || attempt === 2) {
@@ -696,15 +717,34 @@ async function blockSubmissionOwner(request: Request, environment: Env): Promise
 }
 
 async function removeSubmissionForModeration(request: Request, environment: Env): Promise<Record<string, unknown>> {
-    const expected = environment.MODERATOR_API_KEY;
-    if (!expected || request.headers.get("X-Karteria-Moderator-Key") !== expected) {
-        throw new HTTPError("Moderator authorization is required.", 401);
-    }
+    assertModerator(request, environment);
     const body = asObject(await requestJSON(request));
     const submissionID = asUUID(body.submissionID, "submissionID");
     const client = configuredClient(environment);
     await purgeSubmissionEvidence(client, submissionID, "removed");
     return { removed: true };
+}
+
+async function moderationHealth(request: Request, environment: Env): Promise<Record<string, unknown>> {
+    assertModerator(request, environment);
+    const client = configuredClient(environment);
+    await client.query(
+        "ReviewSeat",
+        [{ fieldName: "state", comparator: "EQUALS", value: "__health_probe__" }],
+        { desiredKeys: ["seatID"], resultsLimit: 1 },
+    );
+    return {
+        status: "ok",
+        cloudKitEnvironment: environment.CLOUDKIT_ENVIRONMENT,
+        revenueCatConfigured: isRevenueCatConfigured(environment),
+    };
+}
+
+function assertModerator(request: Request, environment: Env): void {
+    const expected = environment.MODERATOR_API_KEY;
+    if (!expected || request.headers.get("X-Karteria-Moderator-Key") !== expected) {
+        throw new HTTPError("Moderator authorization is required.", 401);
+    }
 }
 
 async function settleSubmissionIfReady(client: CloudKitClient, submissionID: string): Promise<Record<string, unknown> | null> {
@@ -783,7 +823,7 @@ async function settleSubmissionIfReady(client: CloudKitClient, submissionID: str
         })),
     ];
     try {
-        await client.modify(operations, true);
+        await client.modify(operations);
         return settlementResponse({
             ownerSubjectHash: submission.ownerSubjectHash,
             outcome: decision.outcome,
@@ -866,7 +906,7 @@ async function reopenExpiredSeats(client: CloudKitClient, now: number): Promise<
                     },
                     requiredChangeTag(seat),
                 ),
-            }], true);
+            }]);
         } catch {
             // A competing claim owns this seat now. The next claim loop selects another one.
         }
@@ -929,7 +969,7 @@ async function purgeSubmissionEvidence(client: CloudKitClient, submissionID: str
         }] : []),
     ];
     if (operations.length > 0) {
-        await client.modify(operations, true);
+        await client.modify(operations);
     }
 }
 
@@ -976,7 +1016,7 @@ async function getOrCreateStanding(client: CloudKitClient, subjectHash: string):
         blockedOwnerSubjectHashesJSON: field("[]"),
     });
     try {
-        const created = await client.modify([{ operationType: "create", record: freshRecord }], true);
+        const created = await client.modify([{ operationType: "create", record: freshRecord }]);
         return standingFromRecord(created[0] ?? freshRecord);
     } catch (error) {
         const raced = await getRecord(client, recordName);
@@ -1008,7 +1048,7 @@ async function appendAward(
             standingFields(updated),
             requiredChangeTag(standing.record),
         ),
-    }], true);
+    }]);
     return standingFromRecord(records[0] ?? updated.record);
 }
 
@@ -1029,7 +1069,7 @@ async function markAwardGranted(
             standingFields(updated),
             requiredChangeTag(standing.record),
         ),
-    }], true);
+    }]);
     return standingFromRecord(records[0] ?? updated.record);
 }
 

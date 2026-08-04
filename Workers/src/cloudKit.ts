@@ -88,8 +88,8 @@ export class CloudKitClient {
         return recordsFrom(response);
     }
 
-    async modify(operations: CloudKitOperation[], atomic = true): Promise<CloudKitRecord[]> {
-        const response = await this.post("records/modify", { operations, atomic });
+    async modify(operations: CloudKitOperation[]): Promise<CloudKitRecord[]> {
+        const response = await this.post("records/modify", cloudKitModifyPayload(operations));
         return recordsFrom(response);
     }
 
@@ -156,6 +156,11 @@ export type CloudKitOperation =
     | { operationType: "create"; record: CloudKitRecord }
     | { operationType: "update"; record: CloudKitRecord }
     | { operationType: "delete"; record: Pick<CloudKitRecord, "recordName" | "recordChangeTag"> };
+
+export function cloudKitModifyPayload(operations: CloudKitOperation[]): Record<string, unknown> {
+    // CloudKit's public database only exposes the default zone, which rejects atomic batches.
+    return { operations, atomic: false };
+}
 
 export function record(
     recordName: string,
