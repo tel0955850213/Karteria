@@ -203,7 +203,7 @@ final class EvidencePreflightService: ObservableObject {
             warnings: []
         )
 
-        #if canImport(FoundationModels)
+        #if compiler(>=6.4) && canImport(FoundationModels)
         guard #available(iOS 27.0, *), SystemLanguageModel.default.isAvailable else { return manual }
         do {
             return try await runOnDeviceAssessment(
@@ -220,7 +220,7 @@ final class EvidencePreflightService: ObservableObject {
         #endif
     }
 
-    #if canImport(FoundationModels)
+    #if compiler(>=6.4) && canImport(FoundationModels)
     @available(iOS 27.0, *)
     private func runOnDeviceAssessment(
         contract: EvidenceContract,
