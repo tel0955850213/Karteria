@@ -1,8 +1,14 @@
-# Karteria: Practice with Proof
+# Karteria
 
-`Practice. Prove. Progress.`
+An iPhone prototype for deliberate practice. Set a goal, do a two-minute rep, and submit one piece of evidence when you are ready for review.
 
-Karteria is an English-first iPhone app for deliberate practice. Daily reps remain private; a checkpoint becomes verified only when two of three calibrated anonymous peers independently mark all three observable criteria as met.
+**[Run locally](#run-locally)** · [Review rule](#the-review-rule) · [Privacy and safety](docs/PRIVACY_AND_SAFETY.md)
+
+<img src="release/screenshots/app-store-69/02-practice.png" width="260" alt="Karteria's iPhone practice screen" />
+
+## The review rule
+
+Daily practice stays private. A checkpoint is verified after two of three calibrated anonymous peers independently confirm all three observable criteria. A review can give useful feedback and still leave the checkpoint unverified. The domain tests cover the practice and review rules.
 
 ## Product boundary
 
@@ -22,15 +28,18 @@ Karteria is an English-first iPhone app for deliberate practice. Daily reps rema
 | `CloudKit/public-schema.json` | Version-controlled declarative public database schema. |
 | `docs/` | Setup, privacy, release, and Shipaton submission guidance. |
 
-## Local verification
+## Run locally
+
+Open `Karteria.xcodeproj`, select the `Karteria` scheme, and choose an installed iOS 18+ simulator. Start with private practice. Anonymous exchange and trusted review require the respective Worker and CloudKit configuration.
 
 ```bash
-# iOS app, using the existing iOS 27 QA Main simulator
+# Replace the placeholder with the UDID of a simulator installed on your Mac.
 xcodebuild -project Karteria.xcodeproj -scheme Karteria \
-  -destination 'platform=iOS Simulator,id=6F2A33AA-0CC4-4CB2-8642-23A6F90CD524' test
+  -destination 'platform=iOS Simulator,id=<installed-simulator-udid>' test
 
 # Worker source only; this does not log in to or deploy Cloudflare
 cd Workers
+npm ci
 npm run check
 npm test
 ```
